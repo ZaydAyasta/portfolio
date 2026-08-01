@@ -1,4 +1,6 @@
 <script setup>
+import ShuffleText from './shared/presentation/components/ShuffleText.vue'
+
 const services = [
   'UX/UI design',
   'Frontend development',
@@ -39,11 +41,11 @@ const projects = [
 <template>
   <main class="portfolio-shell">
     <header class="site-header" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Go to top">Zayd Ayasta</a>
+      <ShuffleText class="brand" href="#top" text="Zayd Ayasta" label="Go to top" />
       <nav class="site-nav">
-        <a href="#about">about</a>
-        <a href="#work">work</a>
-        <a href="#contact">contact</a>
+        <ShuffleText href="#about" text="about" />
+        <ShuffleText href="#work" text="work" />
+        <ShuffleText href="#contact" text="contact" />
       </nav>
       <p class="availability">available for small projects</p>
     </header>
@@ -135,7 +137,12 @@ const projects = [
       </div>
     </section>
 
-    <section id="contact" class="contact-section section-grid" aria-labelledby="contact-title">
+    <section
+      id="contact"
+      class="contact-section section-grid"
+      data-ghost="drop me a message"
+      aria-labelledby="contact-title"
+    >
       <p class="section-label">drop me a message</p>
       <h2 id="contact-title">
         <span>let's build</span>
@@ -143,9 +150,9 @@ const projects = [
         <span>that matters.</span>
       </h2>
       <div class="contact-actions">
-        <a href="mailto:hello@zaydayasta.dev">mail</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">linkedin</a>
-        <a href="https://github.com/" target="_blank" rel="noreferrer">github</a>
+        <ShuffleText href="mailto:hello@zaydayasta.dev" text="mail" />
+        <ShuffleText href="https://www.linkedin.com/" text="linkedin" target="_blank" rel="noreferrer" />
+        <ShuffleText href="https://github.com/" text="github" target="_blank" rel="noreferrer" />
       </div>
     </section>
 
