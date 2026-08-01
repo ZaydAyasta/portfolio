@@ -1,5 +1,5 @@
 {
-  "name": "untitled",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.40",
-    "vue-i18n": "^11.4.8"
+    "vue": "^3.5.40"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.8",

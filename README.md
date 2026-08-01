@@ -1,5 +1,24 @@
-# Vue 3 + Vite
+# Zayd Ayasta Portfolio
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Base de portafolio personal hecha con Vite y Vue para `zaydayasta.dev`.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Comandos
+
+```sh
+npm install
+npm run dev
+npm run build
+npm run preview
+```
+
+## Estructura
+
+- `src/app.vue`: contenido principal editable del portafolio.
+- `src/style.css`: sistema visual, layout responsive y estilos globales.
+- `public/project-previews.png`: imagen placeholder para los proyectos.
+
+## Pendiente
+
+- Reemplazar placeholders por proyectos reales.
+- Ajustar enlaces definitivos de correo, GitHub y LinkedIn.
+- Agregar animaciones tipograficas y transiciones de scroll.
