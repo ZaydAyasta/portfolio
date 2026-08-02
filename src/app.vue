@@ -1,5 +1,8 @@
 <script setup>
+import { onMounted, ref } from 'vue'
 import ShuffleText from './shared/presentation/components/ShuffleText.vue'
+
+const introDone = ref(false)
 
 const services = [
   'UX/UI design',
@@ -36,10 +39,17 @@ const projects = [
     imagePosition: 'right center',
   },
 ]
+
+onMounted(() => {
+  window.setTimeout(() => {
+    introDone.value = true
+  }, 4700)
+})
 </script>
 
 <template>
-  <main class="portfolio-shell">
+  <div v-if="!introDone" class="intro-backdrop" aria-hidden="true"></div>
+  <main class="portfolio-shell" :class="{ 'intro-running': !introDone }">
     <header class="site-header" aria-label="Primary navigation">
       <ShuffleText class="brand" href="#top" text="Zayd Ayasta" label="Go to top" />
       <nav class="site-nav">
