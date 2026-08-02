@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
+import BuildWords from './shared/presentation/components/BuildWords.vue'
 import ShuffleText from './shared/presentation/components/ShuffleText.vue'
 
 const introDone = ref(false)
@@ -105,8 +106,13 @@ onMounted(() => {
         <h2 id="statement-title">not magic. just decisions under pressure.</h2>
       </div>
       <p class="statement-copy">
-        I take messy ideas, break them down, overthink the details that matter,
-        remove the noise, and ship interfaces that people can actually use.
+        <BuildWords
+          :lines="[
+            'I take messy ideas, break them down, overthink the details that matter,',
+            'remove the noise, and ship interfaces that people can actually use.',
+          ]"
+          :ready="introDone"
+        />
       </p>
     </section>
 
@@ -120,8 +126,13 @@ onMounted(() => {
           <span>felt right.</span>
         </h2>
         <p>
-          Replace these placeholders with your real case studies, screenshots,
-          and outcomes. Keep the rhythm; change the substance.
+          <BuildWords
+            :lines="[
+              'Replace these placeholders with your real case studies, screenshots,',
+              'and outcomes. Keep the rhythm; change the substance.',
+            ]"
+            :ready="introDone"
+          />
         </p>
       </div>
 
