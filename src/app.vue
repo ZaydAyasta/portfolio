@@ -177,9 +177,16 @@ onMounted(() => {
       </div>
     </section>
 
-    <footer class="site-footer">
-      <p>made with stubborn attention.</p>
-      <p>2026</p>
+    <footer class="site-footer" aria-label="Footer">
+      <div class="footer-signature" aria-label="made with hate">
+        <span>made with</span>
+        <span class="footer-emotion" data-ghost="love">hate</span>
+      </div>
+      <p class="footer-note">
+        because polish is rarely born from comfort.
+      </p>
+      <p class="footer-detail">F5 is details.</p>
+      <p class="footer-year" aria-label="Copyright 2026">©26</p>
     </footer>
   </main>
 </template>
