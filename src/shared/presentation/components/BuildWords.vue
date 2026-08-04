@@ -31,7 +31,7 @@ const lineWords = computed(() => {
         const data = {
           text: word,
           index,
-          delay: order * 115 + Math.floor(index / 13) * 80,
+          delay: order * 170 + Math.floor(index / 13) * 120,
         }
         index += 1
         return data

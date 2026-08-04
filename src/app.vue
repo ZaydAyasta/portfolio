@@ -98,7 +98,7 @@ onMounted(() => {
 
     <section class="statement-section section-grid" aria-labelledby="statement-title">
       <div class="stamp">
-        <span>f'26</span>
+        <span>F5</span>
         <span>portfolio</span>
       </div>
       <div>
@@ -148,7 +148,9 @@ onMounted(() => {
           <div class="project-info">
             <span>{{ project.number }}</span>
             <h3>{{ project.title }}</h3>
-            <p>{{ project.summary }}</p>
+            <p>
+              <BuildWords :lines="[project.summary]" :ready="introDone" />
+            </p>
             <div>
               <span>{{ project.type }}</span>
               <span>{{ project.year }}</span>
@@ -186,7 +188,8 @@ onMounted(() => {
         because polish is rarely born from comfort.
       </p>
       <p class="footer-detail">F5 is details.</p>
-      <p class="footer-year" aria-label="Copyright 2026">©26</p>
+      <p class="footer-year" aria-label="Copyright 2026">&copy;26</p>
     </footer>
   </main>
 </template>
+

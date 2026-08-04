@@ -9,6 +9,8 @@
   --blue: #355cff;
   --max: 1440px;
   --pad: clamp(18px, 3vw, 48px);
+  --small: clamp(15px, 1.2vw, 20px);
+  --body: clamp(20px, 1.8vw, 28px);
   --display: "Arial Black", Impact, Haettenschweiler, "Franklin Gothic Heavy", sans-serif;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -151,7 +153,7 @@ img {
 .project-info div,
 .site-footer {
   font-family: "Courier New", ui-monospace, monospace;
-  font-size: 12px;
+  font-size: var(--small);
   line-height: 1.1;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -229,18 +231,34 @@ img {
   color: var(--muted);
 }
 
+.hero-meta {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  min-height: auto;
+  gap: clamp(26px, 4vw, 64px);
+  text-align: right;
+}
+
+.hero-meta p:last-child {
+  transform: translateX(clamp(18px, 2vw, 32px));
+}
+
 .hero-copy {
   align-self: end;
+  grid-column: 2 / 4;
   width: min(100%, 1120px);
   justify-self: center;
+  transform: translateY(clamp(-54px, -4svh, -24px));
 }
 
 .intro-line {
   max-width: 340px;
   margin: 0 0 clamp(24px, 4vw, 64px);
   color: var(--muted);
-  font-size: clamp(18px, 2vw, 30px);
+  font-size: clamp(22px, 2.2vw, 34px);
   line-height: 1.08;
+  transform: translateY(-18px);
 }
 
 h1,
@@ -291,6 +309,10 @@ h2 {
 }
 
 .reveal-word {
+  --word-delay: 0ms;
+  --word-x: 0%;
+  --word-y: 0%;
+  --word-rotate: 0deg;
   display: inline-block;
   margin-right: 0.18em;
   vertical-align: top;
@@ -301,10 +323,6 @@ h2 {
 }
 
 .reveal-word > span {
-  --word-delay: 0ms;
-  --word-x: 0%;
-  --word-y: 0%;
-  --word-rotate: 0deg;
   display: inline-block;
   transform: translate3d(var(--word-x), var(--word-y), 0) rotate(var(--word-rotate));
   transition:
@@ -326,6 +344,7 @@ h2 {
 }
 
 .build-word {
+  --build-delay: 0ms;
   display: inline-block;
   margin-right: 0.18em;
   vertical-align: top;
@@ -336,7 +355,6 @@ h2 {
 }
 
 .build-word > span {
-  --build-delay: 0ms;
   display: inline-block;
   opacity: 0;
   visibility: hidden;
@@ -357,6 +375,7 @@ h2 {
 
 .section-label {
   color: var(--muted);
+  font-weight: 700;
 }
 
 .services-section,
@@ -401,10 +420,10 @@ h2 {
 
 .statement-copy {
   align-self: end;
-  max-width: 390px;
+  max-width: 520px;
   color: var(--muted);
-  font-size: clamp(18px, 2vw, 26px);
-  line-height: 1.16;
+  font-size: var(--body);
+  line-height: 1.12;
 }
 
 .work-section {
@@ -422,10 +441,10 @@ h2 {
 
 .work-heading p:last-child {
   align-self: end;
-  max-width: 360px;
+  max-width: 460px;
   color: var(--muted);
-  font-size: 18px;
-  line-height: 1.22;
+  font-size: var(--body);
+  line-height: 1.12;
 }
 
 .project-list {
@@ -434,7 +453,7 @@ h2 {
 
 .project-card {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.7fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
   gap: var(--pad);
   padding: var(--pad);
   border-top: 1px solid var(--line);
@@ -472,18 +491,20 @@ h2 {
 
 .project-info h3 {
   font-family: var(--display);
-  font-size: clamp(42px, 6vw, 86px);
+  max-width: 100%;
+  font-size: clamp(42px, 4.8vw, 68px);
   font-weight: 800;
   line-height: 0.88;
   letter-spacing: 0;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .project-info p {
-  max-width: 360px;
+  max-width: 430px;
   color: var(--muted);
-  font-size: 18px;
-  line-height: 1.22;
+  font-size: var(--body);
+  line-height: 1.12;
 }
 
 .project-info div {
@@ -638,14 +659,45 @@ h2 {
 
   .hero-section {
     min-height: auto;
-    gap: 52px;
-    padding-top: 54px;
+    gap: 34px;
+    padding-top: 42px;
   }
 
   .hero-kicker,
   .hero-meta {
     min-height: 0;
     gap: 10px;
+  }
+
+  .hero-meta {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: start;
+    text-align: left;
+  }
+
+  .hero-meta p:last-child {
+    transform: none;
+  }
+
+  .hero-copy {
+    grid-column: auto;
+    justify-self: start;
+    transform: none;
+  }
+
+  .intro-line {
+    max-width: 280px;
+    font-size: clamp(20px, 7vw, 30px);
+    transform: none;
+  }
+
+  h1 {
+    font-size: clamp(46px, 13.4vw, 86px);
+  }
+
+  h2 {
+    font-size: clamp(42px, 14vw, 82px);
   }
 
   .stamp {
@@ -655,6 +707,19 @@ h2 {
 
   .project-card {
     gap: 24px;
+    padding-block: 32px;
+  }
+
+  .project-image-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-info {
+    min-height: auto;
+  }
+
+  .project-info h3 {
+    font-size: clamp(42px, 14vw, 76px);
   }
 
   .project-info div,
@@ -674,6 +739,48 @@ h2 {
   .footer-year {
     grid-column: auto;
     grid-row: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --pad: 18px;
+    --small: 13px;
+    --body: 18px;
+  }
+
+  .site-header {
+    min-height: auto;
+  }
+
+  .site-nav {
+    gap: 18px;
+  }
+
+  .hero-section {
+    padding-bottom: 24px;
+  }
+
+  h1 {
+    font-size: clamp(40px, 12.8vw, 58px);
+  }
+
+  .services-section,
+  .statement-section,
+  .contact-section {
+    padding-block: 72px;
+  }
+
+  .work-heading {
+    padding-bottom: 48px;
+  }
+
+  .project-info h3 {
+    font-size: clamp(38px, 12vw, 58px);
+  }
+
+  .footer-signature {
+    font-size: clamp(50px, 17vw, 86px);
   }
 }
 
