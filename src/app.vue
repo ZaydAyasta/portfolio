@@ -6,39 +6,64 @@ import ShuffleText from './shared/presentation/components/ShuffleText.vue'
 const introDone = ref(false)
 
 const services = [
-  'UX/UI design',
-  'Frontend development',
-  'Interaction systems',
-  'Product strategy',
-  'Design research',
-  'Motion details',
+  'REST APIs',
+  'Backend development',
+  'Full-stack modules',
+  'JWT authentication',
+  'DDD architecture',
+  'Payment integrations',
 ]
 
 const projects = [
   {
     number: '01',
     title: 'SupplyWok',
-    type: 'SaaS operations',
+    type: 'Vue 3 + ASP.NET Core',
     year: '2026',
-    summary: 'Inventory, purchasing, and kitchen flows for restaurant teams.',
+    summary: 'Led the purchasing and supply module, integrating frontend, REST APIs, business rules, JWT-protected routes, Stripe payments and CRUD flows for purchase orders.',
     imagePosition: 'left center',
   },
   {
     number: '02',
-    title: 'UrbanTrust',
-    type: 'Civic platform',
-    year: '2025',
-    summary: 'A clear interface for reporting, tracking, and validating city issues.',
+    title: 'SupplyWok Open Source',
+    type: 'Angular + Spring Boot',
+    year: '2026',
+    summary: 'Built supply and purchasing services with Spring Boot, Spring Data JPA, PostgreSQL, domain rules, REST endpoints and Angular integration.',
     imagePosition: 'center center',
   },
   {
     number: '03',
-    title: 'SupportFlow AI',
-    type: 'Web platform',
+    title: 'Backend Toolkit',
+    type: 'APIs + data + security',
     year: '2026',
-    summary: 'Registering, assigning and resolving technical incidents within a company.',
+    summary: 'Hands-on stack focused on JavaScript, TypeScript, C#, Java, SQL, ASP.NET Core, Spring Boot, Entity Framework Core, MySQL, PostgreSQL, OpenAPI and testing with Postman.',
     imagePosition: 'right center',
   },
+]
+
+const skills = [
+  'JavaScript',
+  'TypeScript',
+  'C#',
+  'Java',
+  'SQL',
+  'Vue 3',
+  'Angular',
+  'Pinia',
+  'PrimeVue',
+  'ASP.NET Core',
+  'Spring Boot',
+  'Entity Framework Core',
+  'Spring Data JPA',
+  'MySQL',
+  'PostgreSQL',
+  'MongoDB',
+  'JWT',
+  'Stripe',
+  'Swagger/OpenAPI',
+  'Postman',
+  'GitHub',
+  'Scrum',
 ]
 
 onMounted(() => {
@@ -68,11 +93,10 @@ onMounted(() => {
       </div>
 
       <div class="hero-copy">
-        <p class="intro-line">another person behind the screen</p>
+        <p class="intro-line">software engineering student building practical backend and full-stack systems</p>
         <h1>
-          <span>UX/UI</span>
-          <span>designer,</span>
-          <span>frontend</span>
+          <span>backend</span>
+          <span>full-stack</span>
           <span>developer.</span>
         </h1>
       </div>
@@ -86,13 +110,16 @@ onMounted(() => {
     <section id="about" class="services-section section-grid" aria-labelledby="services-title">
       <p class="section-label">services</p>
       <h2 id="services-title">
-        <span>doing</span>
-        <span>design as</span>
-        <span>something</span>
-        <span>useful.</span>
+        <span>building</span>
+        <span>systems with</span>
+        <span>clear domain</span>
+        <span>logic.</span>
       </h2>
       <div class="service-list" aria-label="Services">
         <span v-for="service in services" :key="service">{{ service }}</span>
+      </div>
+      <div class="skills-list" aria-label="Technical skills">
+        <span v-for="skill in skills" :key="skill">{{ skill }}</span>
       </div>
     </section>
 
@@ -103,13 +130,13 @@ onMounted(() => {
       </div>
       <div>
         <p class="section-label">how i work</p>
-        <h2 id="statement-title">not magic. just decisions under pressure.</h2>
+        <h2 id="statement-title">not just screens. flows, contracts and rules.</h2>
       </div>
       <p class="statement-copy">
         <BuildWords
           :lines="[
-            'I take messy ideas, break them down, overthink the details that matter,',
-            'remove the noise, and ship interfaces that people can actually use.',
+            'I design and implement REST APIs, authentication, persistence and frontend integration,',
+            'with attention to bounded contexts, business rules, documentation and practical delivery.',
           ]"
           :ready="introDone"
         />
@@ -120,16 +147,16 @@ onMounted(() => {
       <div class="work-heading section-grid">
         <p class="section-label">selected work</p>
         <h2 id="work-title">
-          <span>a curated</span>
-          <span>selection of</span>
-          <span>projects that</span>
-          <span>felt right.</span>
+          <span>relevant</span>
+          <span>software</span>
+          <span>projects from</span>
+          <span>my cv.</span>
         </h2>
         <p>
           <BuildWords
             :lines="[
-              'Replace these placeholders with your real case studies, screenshots,',
-              'and outcomes. Keep the rhythm; change the substance.',
+              'University projects focused on purchasing, supply, inventory relationships,',
+              'backend services, API contracts, state management and team delivery.',
             ]"
             :ready="introDone"
           />
@@ -168,14 +195,14 @@ onMounted(() => {
     >
       <p class="section-label">drop me a message</p>
       <h2 id="contact-title">
-        <span>let's build</span>
-        <span>something</span>
-        <span>that matters.</span>
+        <span>open to</span>
+        <span>backend</span>
+        <span>practice.</span>
       </h2>
       <div class="contact-actions">
-        <ShuffleText href="mailto:hello@zaydayasta.dev" text="mail" />
-        <ShuffleText href="https://www.linkedin.com/" text="linkedin" target="_blank" rel="noreferrer" />
-        <ShuffleText href="https://github.com/" text="github" target="_blank" rel="noreferrer" />
+        <ShuffleText href="mailto:zayd.ayasta.dos@gmail.com" text="mail" />
+        <ShuffleText href="https://zaydayasta.dev/" text="web" target="_blank" rel="noreferrer" />
+        <ShuffleText href="https://github.com/ZaydAyasta" text="github" target="_blank" rel="noreferrer" />
       </div>
     </section>
 
@@ -185,7 +212,7 @@ onMounted(() => {
         <span class="footer-emotion" data-ghost="love">hate</span>
       </div>
       <p class="footer-note">
-        because polish is rarely born from comfort.
+        because useful software is forged in constraints, contracts and annoying edge cases.
       </p>
       <p class="footer-detail">F5 is details.</p>
       <p class="footer-year" aria-label="Copyright 2026">&copy;26</p>
