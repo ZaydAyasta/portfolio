@@ -541,6 +541,10 @@ figure {
   min-width: 0;
 }
 
+.packetlens-board .task-node {
+  font-size: clamp(19px, 3.3vw, 52px);
+}
+
 .project-stack {
   color: var(--muted);
 }

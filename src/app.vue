@@ -125,7 +125,7 @@ onBeforeUnmount(() => {
       <header class="work-intro" data-mobile-reveal>
         <p class="scene-kicker">selected work / 04</p>
         <h2 id="work-title">products that<br />hold up under use.</h2>
-        <p>Three systems, each built around operational rules instead of decorative screens.</p>
+        <p>Selected systems and ongoing research, grounded in real technical problems.</p>
       </header>
 
       <article class="project-scene project-supply" data-project="supply" data-mobile-reveal>
@@ -196,6 +196,31 @@ onBeforeUnmount(() => {
               <li>Modular monolith</li>
             </ul>
             <a class="project-link" href="https://github.com/ZaydAyasta/attendance-system" target="_blank" rel="noreferrer">view source -></a>
+          </div>
+        </div>
+      </article>
+      <article class="project-scene project-packetlens" data-project="packetlens" data-mobile-reveal>
+        <div class="project-marker">04 / PacketLens</div>
+        <div class="project-layout">
+          <div class="task-board packetlens-board" aria-label="PacketLens research topics">
+            <span class="task-track" aria-hidden="true"></span>
+            <span class="task-node">network</span>
+            <span class="task-node">events</span>
+            <span class="task-node">packets</span>
+            <span class="task-node">trace</span>
+            <span class="task-node">inspect</span>
+            <span class="task-node">learn</span>
+            <span class="task-signal">research / planning</span>
+          </div>
+          <div class="project-copy">
+            <p class="project-stack">Research / planning</p>
+            <h3>PacketLens</h3>
+            <p>An in-progress network simulation project exploring discrete-event engines, packet flows and ways to inspect how network behavior unfolds.</p>
+            <ul class="project-tags" aria-label="PacketLens research areas">
+              <li>Network simulation</li>
+              <li>Discrete events</li>
+              <li>Packet inspection</li>
+            </ul>
           </div>
         </div>
       </article>

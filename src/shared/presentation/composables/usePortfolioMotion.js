@@ -117,6 +117,12 @@ export function usePortfolioMotion(root, isReady) {
               stagger: 0.08,
             })
           }
+
+          if (kind === 'packetlens') {
+            timeline
+              .from(scene.querySelector('.task-track'), { scaleY: 0, transformOrigin: 'top' }, 0)
+              .from(scene.querySelectorAll('.task-node'), { y: 40, opacity: 0, stagger: 0.1 }, 0.1)
+          }
         })
 
         gsap.timeline({
