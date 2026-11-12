@@ -80,6 +80,17 @@ export function usePortfolioMotion(root, isReady) {
           .from(select('.manifesto-step'), { y: 72, opacity: 0, stagger: 0.12 }, 0.42)
           .to(select('.manifesto-stamp'), { rotation: 8, scale: 1.08 }, 0.55)
 
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: select('.work-intro')[0],
+            start: 'top 85%',
+            end: 'bottom 60%',
+            scrub: 0.8,
+          },
+        })
+          .from(select('.work-intro h2'), { y: 70, opacity: 0 }, 0)
+          .from(select('.work-intro > p:last-child'), { y: 35, opacity: 0 }, 0.2)
+
         select('.project-scene').forEach((scene) => {
           const kind = scene.dataset.project
           const timeline = gsap.timeline({
@@ -103,9 +114,9 @@ export function usePortfolioMotion(root, isReady) {
 
           if (kind === 'task') {
             timeline
-              .from(select('.task-track'), { scaleY: 0, transformOrigin: 'top' }, 0)
-              .from(select('.task-node'), { y: 60, opacity: 0, stagger: 0.1 }, 0.12)
-              .from(select('.task-copy'), { x: 56, opacity: 0 }, 0.2)
+              .from(scene.querySelector('.task-track'), { scaleY: 0, transformOrigin: 'top' }, 0)
+              .from(scene.querySelectorAll('.task-node'), { y: 60, opacity: 0, stagger: 0.1 }, 0.12)
+              .from(scene.querySelector('.task-copy'), { x: 56, opacity: 0 }, 0.2)
           }
 
           if (kind === 'attendance') {
@@ -141,7 +152,7 @@ export function usePortfolioMotion(root, isReady) {
             stagger: 0.08,
           }, 0)
           .from(select('.toolkit-axis'), { scale: 0, transformOrigin: 'center', stagger: 0.1 }, 0.2)
-          .from(select('.toolkit-focus'), { y: 48, opacity: 0, stagger: 0.09 }, 0.42)
+          .from(select('.toolkit-focus p'), { y: 32, opacity: 0, stagger: 0.12 }, 0.42)
 
         return () => undefined
       })
